@@ -1,0 +1,21 @@
+[
+    {
+      "product_id": "P1001",
+      "category": "Electronics",
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with adjustable DPI",
+      "price": "29.99",
+      "stock": "150",
+      "ttl": "1672531199"
+    },
+    {
+      "product_id": "P1002",
+      "category": "Electronics",
+      "name": "Mechanical Keyboard",
+      "description": "RGB Mechanical Keyboard with Blue Switches",
+      "price": "69.99",
+      "stock": "75",
+      "ttl": "1672531299"
+    }
+  ]
+  

@@ -17,37 +17,37 @@ variable "billing_mode" {
 }
 
 variable "read_capacity" {
-  description = "Initial read capacity units for the table"
+  description = "Initial read capacity units for the table (ignored if PAY_PER_REQUEST is used)"
   type        = number
   default     = 5
 }
 
 variable "write_capacity" {
-  description = "Initial write capacity units for the table"
+  description = "Initial write capacity units for the table (ignored if PAY_PER_REQUEST is used)"
   type        = number
   default     = 5
 }
 
 variable "max_read_capacity" {
-  description = "Maximum auto scaling read capacity units"
+  description = "Maximum auto-scaling read capacity units"
   type        = number
   default     = 10
 }
 
 variable "min_read_capacity" {
-  description = "Minimum auto scaling read capacity units"
+  description = "Minimum auto-scaling read capacity units"
   type        = number
   default     = 1
 }
 
 variable "max_write_capacity" {
-  description = "Maximum auto scaling write capacity units"
+  description = "Maximum auto-scaling write capacity units"
   type        = number
   default     = 10
 }
 
 variable "min_write_capacity" {
-  description = "Minimum auto scaling write capacity units"
+  description = "Minimum auto-scaling write capacity units"
   type        = number
   default     = 1
 }
@@ -55,14 +55,15 @@ variable "min_write_capacity" {
 variable "hash_key" {
   description = "Name of the primary (hash) key attribute"
   type        = string
-  default     = "product_id"
+  default     = "id"
 }
 
 variable "range_key" {
-  description = "Name of the sort (range) key attribute"
+  description = "Name of the sort (range) key attribute (leave empty if not used)"
   type        = string
-  default     = "category"
+  default     = ""
 }
+
 variable "product_data" {
   description = "List of products to be inserted into DynamoDB"
   type        = list(map(string))

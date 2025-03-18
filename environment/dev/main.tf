@@ -41,12 +41,3 @@ module "apigateway" {
   # Uncomment the next line if you have a CloudWatch IAM role
   # cloudwatch_role_arn = module.cloudwatch_iam.role_arn
 }
-
-module "data_import" {
-  source = "../../modules/data_import"
-  
-  product_data_file = "../../data/product.json"
-  table_name        = module.dynamodb.table_name
-  hash_key          = var.hash_key
-  depends_on        = [module.dynamodb]
-}
